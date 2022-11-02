@@ -1,54 +1,19 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+#PO
 
-public class FloatArithmeticMean {
+public class FloatArithmeticMeanv2 {
 	public static void main( String[] args ) {
-		System.out.println("\tFloatArithmeticMean");
+		System.out.println("\tFloatArithmeticMean\n");
 		if(args.length == 0) {
 			System.out.println("Brak argumentów programu.\n");
-		}else {
-			float suma = 0;
-			int HowLong = 0;
-			ArrayList<Float> list = new ArrayList<Float>();
-			
-			for (int i = 0; i < args.length; i++) {
-				suma = suma + Float.parseFloat(args[i]);
-				if(args[i].length() >= HowLong) {
-					HowLong = args[i].length() + 3;
-				}
-				list.add(Float.parseFloat(args[i]));
-			}
-			
-			/*
-			System.out.println(list);
-			Collections.sort(list);
-			System.out.println(list);
-			*/
-			
-			for (int j = 0; j <= list.size(); j++) {
-				if(j == list.size()) {
-					for (int k = 0; k < HowLong; k++)
-						System.out.print("-");
-					System.out.print("\n");
-					int z = HowLong - Float.toString(suma).length();
-					while(z!=0) {
-						System.out.print(" ");
-						z--;
-					}
-					System.out.print(suma + "\n\n");
-					break;
-				}
-				int z = HowLong - Float.toString(list.get(j)).length();
-				while(z!=0) {
-					System.out.print(" ");
-					z--;
-				}
-				System.out.print(Float.toString(list.get(j)) + "\n");
-			}
-			
-			System.out.print("Średnia arytmetyczna:  " + suma/args.length);
+			System.exit(0);		//system.exit(0)
 		}
-		
+		float suma = 0;
+		for (int i = 0; i < args.length; i++) {
+			suma = suma + Float.parseFloat(args[i]);
+			System.out.printf("%10.3f%n", Float.parseFloat(args[i]));
+		}
+		System.out.println("----------");
+		System.out.printf("%10.3f%n",suma);
+		System.out.printf("\nŚrednia arytmetyczna: %.4f%n", suma/args.length);
 	}
 }
