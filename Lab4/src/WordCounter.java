@@ -17,13 +17,6 @@ public class WordCounter {
 		for(int i = 0; i < args.length; i++) {
 			command += args[i] + " ";
 		}
-		/*System.out.println(command.indexOf("abc.txt"));
-		int index = command.indexOf("abc.txt")-3;	//liczy po charach
-		System.out.println(args[index]);
-		System.out.println(command.substring(index, index));	//liczy po stringach
-		System.out.println(command.substring(command.indexOf("abc"), command.indexOf("txt") + 3));
-		*/
-		//System.out.print(command.substring(0, 0));
 		
 		BufferedReader reader = new BufferedReader(new FileReader(command.substring(command.indexOf("abc"), command.indexOf("txt") + 3)));
 		int numberOfLines = 0;
@@ -46,7 +39,6 @@ public class WordCounter {
 		reader.close();
 		
 		int numberOfChars = Files.lines(Paths.get("abc.txt")).mapToInt( String::length).sum();
-		//test System.out.println(Files.lines(Paths.get("zzz.txt")).mapToInt( String::length).sum());
 		
 		switch(command) {
 			case "-lc abc.txt ":
