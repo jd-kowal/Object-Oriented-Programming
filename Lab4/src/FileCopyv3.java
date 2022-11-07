@@ -23,13 +23,6 @@ public class FileCopyv3 {
 				e.printStackTrace();
 			}
 		}
-		/*
-		try {
-			Files.createFile(fileCpPath);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
 		
 		if (file.exists() == false) {
 			System.out.println("Plik " + args[0] + " nie istnieje.");
@@ -62,21 +55,3 @@ public class FileCopyv3 {
 		}
 	}
 }
-
-/*
- * Paths.get();
-Files.isRegularFile(file)
-isDirectory()
-isReadable()
-isExecutable()
-isSameFile(x1,x2) IOException
-
-Files.createFile()
-.createDirectory()
-
-Files.delete()
-Files.deleteIfExists()
-
- */
-
-
