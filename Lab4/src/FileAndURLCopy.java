@@ -18,28 +18,22 @@ public class FileAndURLCopy {
 		
 		
 		if(args[0].indexOf(".txt") == -1) {
-			try {
-				URL url = new URL(args[0]);
-				URLConnection connect = url.openConnection();
-				//URLPermission permission = url.openConnection();
-				String urlS = url.getAuthority();
-				connect.connect(); //sprwadzanie połączenia sieciowego, jeśli brak nic poniżej się nie wykona
-				if (connect.getAllowUserInteraction() != true) {
-					System.out.printf("Brak dostępu do ", url);
-					System.exit(0);
+			Path targetFile = Paths.get("AGH.html");
+		         
+		        URI uri = URI.create(args[0]);
+		         
+		    	try (InputStream inputStream = uri.toURL().openStream()) {
+		        	Files.copy(inputStream, targetFile);
+				} catch (MalformedURLException e) {
+					System.out.println("Internet is not connected or bad URL");
+					e.printStackTrace();
+				} catch (IOException e) {
+					System.out.println("Internet is not connected or url servisce unavailable");
+					e.printStackTrace();
 				}
-				
-				File destination = new File(url.getAuthority());
-			} catch (MalformedURLException e) {
-				System.out.println("Internet is not connected or bad URL");
-				e.printStackTrace();
-			} catch (IOException e) {
-				System.out.println("Internet is not connected or url servisce unavailable");
-				e.printStackTrace();
-			}
-			
 			System.exit(0);
 		}
+		
 		
 		String DIR = "C:/Users/user/eclipse-workspace/Lab4";
 		File file = new File(args[0]);
@@ -49,8 +43,7 @@ public class FileAndURLCopy {
 		if (fileCp.exists() == true) {
 			try {
 				Files.delete(fileCpPath);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			} catch (IOException e) {		
 				e.printStackTrace();
 			}
 		}
