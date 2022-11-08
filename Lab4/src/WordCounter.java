@@ -39,30 +39,18 @@ public class WordCounter {
 		reader.close();
 		
 		int numberOfChars = Files.lines(Paths.get("abc.txt")).mapToInt( String::length).sum();
-		
-		switch(command) {
-			case "-lc abc.txt ":
-			case "-l -c abc.txt ":
-				System.out.println("wierszy: " + numberOfLines);
-				System.out.println("znaków: " + numberOfChars);
-				break;
-			case "abc.txt ":
-			case "-lcw abc.txt ":
-			case "-cl -w abc.txt ":
-			case "-l -w -c abc.txt ":
-				System.out.println("wierszy: " + numberOfLines);
-				System.out.println("znaków: " + numberOfChars);
-				System.out.println("słów: " + numberOfWords);
-				break;
-			case "abc.txt -w -c ":
-			case "abc.txt -wc ":
-			case "abc.txt -cw ":
-				System.out.println("znaków: " + numberOfChars);
-				System.out.println("słów: " + numberOfWords);
-				break;
-			default:
-				System.out.println("\n\tError - błędne argumenty programu.\n");
-				break;
-		}
+		for (int i = 0; i < args.length; i++){
+                	if (args[i].charAt(0) == '-'){
+                    		if (args[i].contains("l")){
+                        		System.out.println("wierszy: " + lines);
+                    		}
+                    		if (args[i].contains("c")){
+                        		System.out.println("znakow: " + characters);
+                    		}
+                    		if (args[i].contains("w")){
+                        		System.out.println("slow: " + words);
+                    		}
+			}
+                }
 	}
 }
