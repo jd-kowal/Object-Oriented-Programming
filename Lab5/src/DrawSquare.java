@@ -33,24 +33,6 @@ public class DrawSquare {
 			System.out.print("#\n");
 		}
 		for(int i = 0; i < x; i++)
-			System.out.print("#");
-		
+			System.out.print("#");	
 	}
 }
-
-/*
- System.out.println("#".repeat(x));
- for(int i = x - 2; i>0; i--)
- 	System.out.println("#%"+(x-1)+"c/n",'#');
- System.out.println("#".repeat(x));
- 
- 
-nazwa metody throws pierwszy drugi trzeci wyjątek
-w dokumentacji patrzymy, że ta metoda rzuca jakiś wyjątek
-npaisać program -> potem patrzyć i wyłapywać wyjatki
-?get message
-coś tam -> wyświetla nam pełną informację o błedach -[to co niżej]
-printstack trace -> metod a do wywołania na obiekcie exception (wyświetla ścieżkę) - można wyświetlać strumień do pliku - dużo ciekawych rzeczy
-system.setout - > możemy redefiniować strum9eń
->> strumień powiązany z plikiem > docelowo tradia do pliku
-*/
