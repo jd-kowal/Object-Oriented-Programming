@@ -19,13 +19,9 @@ public class DrawTriangle {
 		
 		
 		int lastRow = 1 + 2 * (x-1);
-		//int lastRow = 2^(x-1)-1;
 		System.out.println(lastRow);
 		int middle = lastRow/2 + 1;
 		System.out.println(middle);
-		
-		//int z = 0;
-		//if(x%2 != 0) z++; 
 		
 		for(int i = 0; i < x; i++) {
 			System.out.print("\n");
@@ -46,10 +42,3 @@ public class DrawTriangle {
 		}
 	}
 }
-
-/*
- System.out.println("#".repeat(x));
- for(int i = x - 2; i>0; i--)
- 	System.out.println("#%"+(x-1)+"c/n",'#');
- System.out.println("#".repeat(x));
- */
