@@ -42,7 +42,7 @@ public class MultiplicationTablev4 {
 		return pObj;
 	}
 	
-	/** random zwraca pseudolosowy obiekt klasy random*/
+	/** random returns a pseudo-random random object*/
 	private static int random(int min, int max) {
 		Random random = new Random();
 		return random.nextInt(min, max);
@@ -50,7 +50,7 @@ public class MultiplicationTablev4 {
 	
 	/** checking - checks if user's answer is correct*/ 
 	private static boolean checking(int a, int b, int ans) {
-		return a*b == ans ? true : false;	//lambda
+		return a*b == ans ? true : false;
 	}
 	
 	/** showStatus - shows user's results*/
@@ -63,12 +63,12 @@ public class MultiplicationTablev4 {
 	
 	
 	/** checkEnding - checks if game is done in 10 attempts or not over 25*/
-	private static boolean checkEnding(Properties pObj) { ///////////////////////////////////////////////////////////////
-		if ((MultiplicationTablev4.getTasksDone() == Integer.parseInt(pObj.getProperty(properties.TASKS_MIN.toString())) /*- 1*/ ||  MultiplicationTablev4.getTasksDone() == Integer.parseInt(pObj.getProperty(properties.TASKS_MAX.toString())))&& MultiplicationTablev4.getPercentageCorrect() >= Integer.parseInt(pObj.getProperty(properties.PERCENT.toString()))) {
+	private static boolean checkEnding(Properties pObj) {
+		if ((MultiplicationTablev4.getTasksDone() == Integer.parseInt(pObj.getProperty(properties.TASKS_MIN.toString())) ||  MultiplicationTablev4.getTasksDone() == Integer.parseInt(pObj.getProperty(properties.TASKS_MAX.toString())))&& MultiplicationTablev4.getPercentageCorrect() >= Integer.parseInt(pObj.getProperty(properties.PERCENT.toString()))) {
 			return true;
 		}else if((MultiplicationTablev4.getPercentageCorrect() > Integer.parseInt(pObj.getProperty(properties.PERCENT.toString()))) && (MultiplicationTablev4.getTasksDone() > Integer.parseInt(pObj.getProperty(properties.TASKS_MIN.toString())))){
 			return true;
-		} else if(MultiplicationTablev4.getTasksDone() == Integer.parseInt(pObj.getProperty(properties.TASKS_MAX.toString())) /*- 1*/){	//-1 zależy od miejsca ifending w game
+		} else if(MultiplicationTablev4.getTasksDone() == Integer.parseInt(pObj.getProperty(properties.TASKS_MAX.toString())) ){
 			return true;
 		} else {
 			return false;
@@ -77,7 +77,7 @@ public class MultiplicationTablev4 {
 	
 	/** results - shows end results*/
 	private static void results(Properties pObj) {
-		if (MultiplicationTablev4.getPercentageCorrect() >= Integer.parseInt(pObj.getProperty(properties.PERCENT.toString()))) { //70
+		if (MultiplicationTablev4.getPercentageCorrect() >= Integer.parseInt(pObj.getProperty(properties.PERCENT.toString()))) { 
 			System.out.print("\n\n\n\t!!! CONGRATULATIONS !!!\n");
 		} else {
 			System.out.print("\n\n\n\tNot too bad.   Try one more time.\n");
@@ -95,7 +95,6 @@ public class MultiplicationTablev4 {
 		int MAX = Integer.parseInt(pObj.getProperty(properties.VALUE_MAX.toString()));
 		Scanner sc = new Scanner(System.in);
 		while(!ifEnd) {
-			//ifEnd = checkEnding(pObj);
 			int a = MultiplicationTablev4.random(MIN,MAX);
 			int b = MultiplicationTablev4.random(MIN,MAX);
 			System.out.println("\nPlease solve this task: ");
