@@ -34,5 +34,13 @@ public class DrawSquare {
 		}
 		for(int i = 0; i < x; i++)
 			System.out.print("#");	
+			
+		
+		
+		//different method
+		System.out.println("#".repeat(x));
+		for(int i = x - 2; i>0; i--)
+ 			System.out.println("#%"+(x-1)+"c/n",'#');
+ 		System.out.println("#".repeat(x));
 	}
 }
