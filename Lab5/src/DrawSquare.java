@@ -37,10 +37,10 @@ public class DrawSquare {
 			
 		
 		
-		//different method
+		//another way
 		System.out.println("#".repeat(x));
 		for(int i = x - 2; i>0; i--)
- 			System.out.println("#%"+(x-1)+"c/n",'#');
+ 			System.out.printf("#%"+(x-1)+"c\n",'#');
  		System.out.println("#".repeat(x));
 	}
 }
