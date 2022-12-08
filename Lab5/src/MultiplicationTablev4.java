@@ -32,12 +32,12 @@ public class MultiplicationTablev4 {
 			pObj.setProperty(properties.TASKS_MIN.toString(), "10");
 			pObj.setProperty(properties.TASKS_MAX.toString(), "25");
 			
-			pObj.store(new FileWriter("setup.properties"), "MultiplicationTable-SettingsFile"); //store(Writer,String)
+			pObj.store(new FileWriter("setup.properties"), "MultiplicationTable-SettingsFile");
 		}
 		
 		FileReader reader;
 		reader = new FileReader(file);
-		pObj.load(reader);	//load(Reader)
+		pObj.load(reader);
 		reader.close();
 		return pObj;
 	}
