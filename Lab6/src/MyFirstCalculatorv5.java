@@ -30,7 +30,6 @@ public class MyFirstCalculatorv5 {
 		textField.setEditable(false);	//text field is set false to not be editable by user
 		textField.setHorizontalAlignment(SwingConstants.RIGHT);	//text is glued to the right side of window
 		jf.getContentPane().add(textField, BorderLayout.NORTH);	//text filed is located in the NORTH of the frame
-        //jp.add(textField);
         
         
         
@@ -56,7 +55,7 @@ public class MyFirstCalculatorv5 {
                 if (b.equals("")) {
                     return a;
                 }
-                if (a.equals("")) {		// * 0 ?
+                if (a.equals("")) {
                     return b;
                 }
                 if (symbol == "/" & Double.parseDouble(a) == 0) {
@@ -77,9 +76,9 @@ public class MyFirstCalculatorv5 {
                 }
             }
 
-            String input = "0";		//0 wyświetlane na początku lub po C (po error)
+            String input = "0";	
             String previousInput = "";
-            final String symbols = "+-*/=C";	//values u can't change
+            final String symbols = "+-*/=C";
             String currentSymbol = "";	//default symbol
             boolean ifLastEquals = false;
             final private String formatString = "%40s";	//way strings are formatting
@@ -113,13 +112,6 @@ public class MyFirstCalculatorv5 {
                             ifLastEquals = false;
                             input = "";
                         }
-                        /*if (ifLastEquals && !accInput.equals("=")) {
-                            currentSymbol = "";
-                            ifLastEquals = false;
-                            input = "";
-                        } else if (input.equals("") && accInput.equals("=") && !currentSymbol.equals("")) {
-                            input = previousInput;
-                        }*/
                         previousInput = String.format(formatString, checkinZerosInResults(howCalcWorks(input, previousInput, currentSymbol)));
                         textField.setText(previousInput);
                         if (accInput.equals("=")) {
@@ -152,10 +144,6 @@ public class MyFirstCalculatorv5 {
             jp.add(x);
         }
     	
-    	
-        //jf.pack(); // all mieści się w ramce - automatycznie ustawia ramkę
-        //jf.setVisible(true);
-        //jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //kończy działanie aplikacji wraz z zamknięciem okienka
     }
 
 	
