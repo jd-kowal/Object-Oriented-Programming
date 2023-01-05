@@ -27,9 +27,9 @@ public class MyFirstCalculatorv5 {
         
         JTextField textField = new JTextField("0");
         textField.setFont(new Font("Arial",Font.BOLD,20));
-		textField.setEditable(false);	//text field is set false to not be editable by user
-		textField.setHorizontalAlignment(SwingConstants.RIGHT);	//text is glued to the right side of window
-		jf.getContentPane().add(textField, BorderLayout.NORTH);	//text filed is located in the NORTH of the frame
+	textField.setEditable(false);	//text field is set false to not be editable by user
+	textField.setHorizontalAlignment(SwingConstants.RIGHT);	//text is glued to the right side of window
+	jf.getContentPane().add(textField, BorderLayout.NORTH);	//text filed is located in the NORTH of the frame
         
         
         
