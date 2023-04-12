@@ -1,5 +1,5 @@
 # Object-Oriented-Programming
-My work during course at the 2nd year of ICT at AGH UST.
+My work during Object-Oriented Programming course at the 2nd year of ICT at AGH UST.
 
 ## About
   These programs are my answers to the assignments in the object-oriented programming course.
